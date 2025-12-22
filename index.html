@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Hub Link Submission</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    p { margin: 0 0 18px; line-height: 1.4; }
+    .grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    .card { border: 1px solid #e6e6e6; border-radius: 14px; padding: 16px; }
+    label { display: block; font-size: 13px; margin: 12px 0 6px; }
+    input, select, textarea { width: 100%; padding: 10px; border: 1px solid #d8d8d8; border-radius: 10px; font-size: 14px; }
+    textarea { min-height: 110px; resize: vertical; }
+    button { margin-top: 14px; padding: 10px 14px; border: 0; border-radius: 10px; font-weight: 600; cursor: pointer; }
+    .muted { color: #666; font-size: 13px; }
+    .success { background: #eaffea; border: 1px solid #bde5bd; padding: 10px; border-radius: 10px; margin-top: 12px; display: none; }
+    .error { background: #ffecec; border: 1px solid #f2b3b3; padding: 10px; border-radius: 10px; margin-top: 12px; display: none; }
+    .pdf { height: 74vh; width: 100%; border: 1px solid #e6e6e6; border-radius: 14px; }
+    .tiny { display:none; } /* honeypot */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AI Hub Link Submission</h1>
+    <p class="muted">Use this to submit links for the AI Hub. Everything you submit goes into our review sheet.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2 style="margin:0 0 8px;font-size:18px;">Reference (Linkfarm)</h2>
+        <p class="muted">Embed your PDF here. If you don’t have a public PDF URL yet, leave this blank for now.</p>
+
+        <!-- Replace the src with a public PDF URL (Google Drive preview or hosted PDF) -->
+        <iframe class="pdf" src="" title="AI Hub Linkfarm PDF"></iframe>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;font-size:18px;">Submit a link</h2>
+
+        <form id="linkForm">
+          <label>Name</label>
+          <input name="name" required />
+
+          <label>Email</label>
+          <input name="email" type="email" required />
+
+          <label>Section</label>
+          <select name="section" required>
+            <option value="">Select…</option>
+            <option>AI Basics</option>
+            <option>Using AI for School and Work</option>
+            <option>How Businesses Are Using AI</option>
+            <option>AI Tools You Might Use</option>
+            <option>Rules, Risks, and Ethics of AI</option>
+            <option>AI News That Matters</option>
+            <option>AI by Smeal Major</option>
+          </select>
+
+          <label>Title (what should we call this link?)</label>
+          <input name="title" required />
+
+          <label>URL</label>
+          <input name="url" type="url" required />
+
+          <label>Short description (1–2 sentences)</label>
+          <textarea name="description" required></textarea>
+
+          <label>Notes (optional)</label>
+          <input name="notes" />
+
+          <!-- Honeypot field -->
+          <div class="tiny">
+            <label>Website</label>
+            <input name="website" autocomplete="off" />
+          </div>
+
+          <button type="submit">Submit</button>
+
+          <div id="success" class="success">Submitted. Thank you.</div>
+          <div id="error" class="error">Something went wrong. Try again.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SCRIPT_URL = "PASTE_YOUR_SCRIPT_WEB_APP_URL_HERE";
+
+    const form = document.getElementById("linkForm");
+    const success = document.getElementById("success");
+    const error = document.getElementById("error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      success.style.display = "none";
+      error.style.display = "none";
+
+      const fd = new FormData(form);
+
+      try {
+        // no-cors avoids CORS issues with Apps Script.
+        // We assume success if the request completes.
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: fd
+        });
+
+        form.reset();
+        success.style.display = "block";
+      } catch (err) {
+        error.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
