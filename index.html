@@ -2,119 +2,416 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Hub Link Submission</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px; }
-    h1 { margin: 0 0 8px; font-size: 28px; }
-    p { margin: 0 0 18px; line-height: 1.4; }
-    .grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; }
-    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-    .card { border: 1px solid #e6e6e6; border-radius: 14px; padding: 16px; }
-    label { display: block; font-size: 13px; margin: 12px 0 6px; }
-    input, select, textarea { width: 100%; padding: 10px; border: 1px solid #d8d8d8; border-radius: 10px; font-size: 14px; }
-    textarea { min-height: 110px; resize: vertical; }
-    button { margin-top: 14px; padding: 10px 14px; border: 0; border-radius: 10px; font-weight: 600; cursor: pointer; }
-    .muted { color: #666; font-size: 13px; }
-    .success { background: #eaffea; border: 1px solid #bde5bd; padding: 10px; border-radius: 10px; margin-top: 12px; display: none; }
-    .error { background: #ffecec; border: 1px solid #f2b3b3; padding: 10px; border-radius: 10px; margin-top: 12px; display: none; }
-    .pdf { height: 74vh; width: 100%; border: 1px solid #e6e6e6; border-radius: 14px; }
-    .tiny { display:none; } /* honeypot */
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student AI Hub Skeleton</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
 </head>
 <body>
-  <div class="wrap">
-    <h1>AI Hub Link Submission</h1>
-    <p class="muted">Use this to submit links for the AI Hub. Everything you submit goes into our review sheet.</p>
-
-    <div class="grid">
-      <div class="card">
-        <h2 style="margin:0 0 8px;font-size:18px;">Reference (Linkfarm)</h2>
-        <p class="muted">Embed your PDF here. If you don’t have a public PDF URL yet, leave this blank for now.</p>
-
-        <!-- Replace the src with a public PDF URL (Google Drive preview or hosted PDF) -->
-        <iframe class="pdf" src="" title="AI Hub Linkfarm PDF"></iframe>
+  <header class="hero">
+    <div class="hero__inner">
+      <div>
+        <p class="eyebrow">AI Hub Linkfarm</p>
+        <h1>Student AI Hub Skeleton</h1>
+        <p class="lede">Recreated from the provided PDF so contributors can explore, add links, and submit them to the review sheet.</p>
       </div>
-
-      <div class="card">
-        <h2 style="margin:0 0 8px;font-size:18px;">Submit a link</h2>
-
-        <form id="linkForm">
-          <label>Name</label>
-          <input name="name" required />
-
-          <label>Email</label>
-          <input name="email" type="email" required />
-
-          <label>Section</label>
-          <select name="section" required>
-            <option value="">Select…</option>
-            <option>AI Basics</option>
-            <option>Using AI for School and Work</option>
-            <option>How Businesses Are Using AI</option>
-            <option>AI Tools You Might Use</option>
-            <option>Rules, Risks, and Ethics of AI</option>
-            <option>AI News That Matters</option>
-            <option>AI by Smeal Major</option>
-          </select>
-
-          <label>Title (what should we call this link?)</label>
-          <input name="title" required />
-
-          <label>URL</label>
-          <input name="url" type="url" required />
-
-          <label>Short description (1–2 sentences)</label>
-          <textarea name="description" required></textarea>
-
-          <label>Notes (optional)</label>
-          <input name="notes" />
-
-          <!-- Honeypot field -->
-          <div class="tiny">
-            <label>Website</label>
-            <input name="website" autocomplete="off" />
-          </div>
-
-          <button type="submit">Submit</button>
-
-          <div id="success" class="success">Submitted. Thank you.</div>
-          <div id="error" class="error">Something went wrong. Try again.</div>
-        </form>
+      <div class="submit-actions">
+        <button class="primary" id="submitTop">Submit All Rows</button>
+        <p class="small muted">All sections submit together. Required: Name, Email, and Title/URL/Description per link.</p>
       </div>
     </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sticky">
+        <h2 class="sidebar__title">Sections</h2>
+        <nav aria-label="Section navigation">
+          <ul class="nav-list">
+            <li><a href="#ai-basics">AI Basics</a></li>
+            <li><a href="#using-ai">Using AI for School and Work</a></li>
+            <li><a href="#business-ai">How Businesses Are Using AI</a></li>
+            <li><a href="#ai-tools">AI Tools You Might Use</a></li>
+            <li><a href="#rules-risks">Rules, Risks, and Ethics of AI</a></li>
+            <li><a href="#ai-news">AI News That Matters</a></li>
+            <li><a href="#ai-major">AI by Smeal Major</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <main>
+      <div class="top-status">
+        <div id="submissionStatus" class="status-pill" aria-live="polite">Ready to collect links</div>
+      </div>
+
+      <section class="section-block" id="ai-basics" data-section-name="AI Basics">
+        <div class="section-header">
+          <h2>AI Basics</h2>
+        </div>
+        <div class="guidance">
+          <div>
+            <h3>Purpose</h3>
+            <p>Give students a clear, non-technical understanding of what AI is, why it matters, and how to think about it responsibly.</p>
+          </div>
+          <div>
+            <h3>Link direction</h3>
+            <ul>
+              <li>Plain-language explanations of AI and generative AI</li>
+              <li>High-level context on why AI is relevant now</li>
+              <li>Framing that sets expectations and avoids hype</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Avoid</h3>
+            <ul>
+              <li>Technical deep dives</li>
+              <li>Tool guides or productivity tips</li>
+            </ul>
+          </div>
+        </div>
+        <div class="worksheet" data-section="AI Basics">
+          <div class="worksheet__header">
+            <h3>Worksheet</h3>
+            <button class="ghost add-row" type="button">+ Add row</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title*</th>
+                  <th>URL*</th>
+                  <th>Description*</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="using-ai" data-section-name="Using AI for School and Work">
+        <div class="section-header">
+          <h2>Using AI for School and Work</h2>
+        </div>
+        <div class="guidance">
+          <div>
+            <h3>Purpose</h3>
+            <p>Show how AI can practically support everyday academic and professional tasks.</p>
+          </div>
+          <div>
+            <h3>Link direction</h3>
+            <ul>
+              <li>Productivity and workflow examples</li>
+              <li>Research, writing, and organization use cases</li>
+              <li>Content that shows AI as a work assistant</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Avoid</h3>
+            <ul>
+              <li>Pure theory</li>
+              <li>Major-specific or industry-specific examples</li>
+            </ul>
+          </div>
+        </div>
+        <div class="worksheet" data-section="Using AI for School and Work">
+          <div class="worksheet__header">
+            <h3>Worksheet</h3>
+            <button class="ghost add-row" type="button">+ Add row</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title*</th>
+                  <th>URL*</th>
+                  <th>Description*</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="business-ai" data-section-name="How Businesses Are Using AI">
+        <div class="section-header">
+          <h2>How Businesses Are Using AI</h2>
+        </div>
+        <div class="guidance">
+          <div>
+            <h3>Purpose</h3>
+            <p>Help students understand how AI is actually being adopted in real organizations.</p>
+          </div>
+          <div>
+            <h3>Link direction</h3>
+            <ul>
+              <li>Real business and government use cases</li>
+              <li>Organizational impact and decision-making</li>
+              <li>Career relevance and workplace implications</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Avoid</h3>
+            <ul>
+              <li>Student-focused productivity content</li>
+              <li>Tool tutorials</li>
+            </ul>
+          </div>
+        </div>
+        <div class="worksheet" data-section="How Businesses Are Using AI">
+          <div class="worksheet__header">
+            <h3>Worksheet</h3>
+            <button class="ghost add-row" type="button">+ Add row</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title*</th>
+                  <th>URL*</th>
+                  <th>Description*</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="ai-tools" data-section-name="AI Tools You Might Use">
+        <div class="section-header">
+          <h2>AI Tools You Might Use</h2>
+        </div>
+        <div class="guidance">
+          <div>
+            <h3>Purpose</h3>
+            <p>Introduce students to commonly used AI tools and help them understand when each is appropriate.</p>
+          </div>
+          <div>
+            <h3>Link direction</h3>
+            <ul>
+              <li>Tool roundups and comparisons</li>
+              <li>"Which tool for which task" framing</li>
+              <li>Clear explanations without hype</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Avoid</h3>
+            <ul>
+              <li>Exhaustive lists</li>
+              <li>Highly technical setup guides</li>
+            </ul>
+          </div>
+        </div>
+        <div class="worksheet" data-section="AI Tools You Might Use">
+          <div class="worksheet__header">
+            <h3>Worksheet</h3>
+            <button class="ghost add-row" type="button">+ Add row</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title*</th>
+                  <th>URL*</th>
+                  <th>Description*</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="rules-risks" data-section-name="Rules, Risks, and Ethics of AI">
+        <div class="section-header">
+          <h2>Rules, Risks, and Ethics of AI</h2>
+        </div>
+        <div class="guidance">
+          <div>
+            <h3>Purpose</h3>
+            <p>Build awareness of responsibility, risk, and expectations around AI use.</p>
+          </div>
+          <div>
+            <h3>Link direction</h3>
+            <ul>
+              <li>Bias, fairness, and data privacy</li>
+              <li>Governance and responsible use</li>
+              <li>High-level regulation and oversight</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Avoid</h3>
+            <ul>
+              <li>Long policy documents</li>
+              <li>Content meant only for legal or technical audiences</li>
+            </ul>
+          </div>
+        </div>
+        <div class="worksheet" data-section="Rules, Risks, and Ethics of AI">
+          <div class="worksheet__header">
+            <h3>Worksheet</h3>
+            <button class="ghost add-row" type="button">+ Add row</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title*</th>
+                  <th>URL*</th>
+                  <th>Description*</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="ai-news" data-section-name="AI News That Matters">
+        <div class="section-header">
+          <h2>AI News That Matters</h2>
+        </div>
+        <div class="guidance">
+          <div>
+            <h3>Purpose</h3>
+            <p>Keep students informed without overwhelming them.</p>
+          </div>
+          <div>
+            <h3>Link direction</h3>
+            <ul>
+              <li>Major partnerships and initiatives</li>
+              <li>Policy or regulatory developments</li>
+              <li>News with clear business or career implications</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Avoid</h3>
+            <ul>
+              <li>Sensational or speculative coverage</li>
+              <li>General tech news without relevance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="worksheet" data-section="AI News That Matters">
+          <div class="worksheet__header">
+            <h3>Worksheet</h3>
+            <button class="ghost add-row" type="button">+ Add row</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title*</th>
+                  <th>URL*</th>
+                  <th>Description*</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="ai-major" data-section-name="AI by Smeal Major">
+        <div class="section-header">
+          <h2>AI by Smeal Major</h2>
+        </div>
+        <div class="guidance">
+          <div>
+            <h3>Purpose</h3>
+            <p>Translate everything above into major-specific relevance.</p>
+          </div>
+          <div>
+            <h3>Link direction</h3>
+            <ul>
+              <li>Use cases by discipline</li>
+              <li>Common tools in that field</li>
+              <li>Skills students should be aware of</li>
+              <li>Relevant news tied to the major</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Avoid</h3>
+            <ul>
+              <li>Repeating general content</li>
+              <li>Overly technical explanations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="worksheet" data-section="AI by Smeal Major">
+          <div class="worksheet__header">
+            <h3>Worksheet</h3>
+            <button class="ghost add-row" type="button">+ Add row</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title*</th>
+                  <th>URL*</th>
+                  <th>Description*</th>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <div class="submit-actions bottom">
+        <button class="primary" id="submitBottom">Submit All Rows</button>
+        <p class="small muted">Submits each filled row individually to the configured Google Apps Script.</p>
+      </div>
+    </main>
+
+    <aside class="identity">
+      <div class="sticky">
+        <h2>Your info</h2>
+        <p class="muted">Required for every submission. Saved locally for reuse.</p>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+
+        <div class="saved" id="savedIndicator" aria-live="polite">Not saved yet</div>
+        <p class="tiny">Data stays in your browser. It is sent with every row you submit.</p>
+
+        <input id="website" name="website" class="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label class="honeypot-label" for="website">Leave this field blank</label>
+      </div>
+    </aside>
   </div>
-
-  <script>
-    const SCRIPT_URL = "PASTE_YOUR_SCRIPT_WEB_APP_URL_HERE";
-
-    const form = document.getElementById("linkForm");
-    const success = document.getElementById("success");
-    const error = document.getElementById("error");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      success.style.display = "none";
-      error.style.display = "none";
-
-      const fd = new FormData(form);
-
-      try {
-        // no-cors avoids CORS issues with Apps Script.
-        // We assume success if the request completes.
-        await fetch(SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
-          body: fd
-        });
-
-        form.reset();
-        success.style.display = "block";
-      } catch (err) {
-        error.style.display = "block";
-      }
-    });
-  </script>
 </body>
 </html>
