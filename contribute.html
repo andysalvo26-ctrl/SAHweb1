@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Hub Curation Workspace</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body class="workspace">
+  <header class="hero">
+    <div class="hero__inner">
+      <div>
+        <p class="eyebrow">AI Hub Linkfarm</p>
+        <h1>Curation Workspace</h1>
+        <p class="lede">Choose a section, add one strong link, and submit it with a short explanation so the AI Hub stays credible.</p>
+      </div>
+      <div class="submit-actions">
+        <div id="submissionStatus" class="status-pill" aria-live="polite">Choose a section to start</div>
+        <p class="small muted">Name and Email are required and saved locally for reuse.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="workspace-shell" aria-label="AI Hub curation workspace">
+    <section class="workspace-panel workspace-panel--sections" aria-labelledby="sections-title">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Browse sections</p>
+          <h2 id="sections-title">Section Browser</h2>
+          <p class="muted">Pick the section that best fits your link, then submit it on the right.</p>
+        </div>
+      </div>
+      <div class="section-card-list">
+        <article class="section-card">
+          <header>
+            <h3>AI Basics</h3>
+            <p class="muted">Clear, non-technical introductions to AI and why it matters.</p>
+          </header>
+          <div class="card-body">
+            <div>
+              <p class="label">We want links that…</p>
+              <ul>
+                <li>Explain AI and generative AI in plain language</li>
+                <li>Give high-level context on why AI is relevant now</li>
+                <li>Set expectations and avoid hype</li>
+              </ul>
+            </div>
+            <div>
+              <p class="label">Avoid…</p>
+              <ul>
+                <li>Technical deep dives</li>
+                <li>Tool guides or productivity tips</li>
+              </ul>
+            </div>
+          </div>
+          <button class="secondary" type="button" data-section="AI Basics">Submit link for this section</button>
+        </article>
+
+        <article class="section-card">
+          <header>
+            <h3>Using AI for School and Work</h3>
+            <p class="muted">Applied, practical use cases that help with everyday tasks.</p>
+          </header>
+          <div class="card-body">
+            <div>
+              <p class="label">We want links that…</p>
+              <ul>
+                <li>Show productivity and workflow examples</li>
+                <li>Cover research, writing, and organization uses</li>
+                <li>Frame AI as a work assistant</li>
+              </ul>
+            </div>
+            <div>
+              <p class="label">Avoid…</p>
+              <ul>
+                <li>Pure theory</li>
+                <li>Major- or industry-specific examples</li>
+              </ul>
+            </div>
+          </div>
+          <button class="secondary" type="button" data-section="Using AI for School and Work">Submit link for this section</button>
+        </article>
+
+        <article class="section-card">
+          <header>
+            <h3>How Businesses Are Using AI</h3>
+            <p class="muted">Real organizational adoption stories and workplace implications.</p>
+          </header>
+          <div class="card-body">
+            <div>
+              <p class="label">We want links that…</p>
+              <ul>
+                <li>Share business and government use cases</li>
+                <li>Discuss organizational impact and decisions</li>
+                <li>Highlight career relevance</li>
+              </ul>
+            </div>
+            <div>
+              <p class="label">Avoid…</p>
+              <ul>
+                <li>Student-only productivity content</li>
+                <li>Tool tutorials</li>
+              </ul>
+            </div>
+          </div>
+          <button class="secondary" type="button" data-section="How Businesses Are Using AI">Submit link for this section</button>
+        </article>
+
+        <article class="section-card">
+          <header>
+            <h3>AI Tools You Might Use</h3>
+            <p class="muted">Clarity on which tools are useful for which tasks.</p>
+          </header>
+          <div class="card-body">
+            <div>
+              <p class="label">We want links that…</p>
+              <ul>
+                <li>Compare tools and when to use them</li>
+                <li>Provide clear, hype-free explanations</li>
+              </ul>
+            </div>
+            <div>
+              <p class="label">Avoid…</p>
+              <ul>
+                <li>Exhaustive lists</li>
+                <li>Highly technical setup guides</li>
+              </ul>
+            </div>
+          </div>
+          <button class="secondary" type="button" data-section="AI Tools You Might Use">Submit link for this section</button>
+        </article>
+
+        <article class="section-card">
+          <header>
+            <h3>Rules, Risks, and Ethics of AI</h3>
+            <p class="muted">Responsible use, governance, and awareness of risks.</p>
+          </header>
+          <div class="card-body">
+            <div>
+              <p class="label">We want links that…</p>
+              <ul>
+                <li>Cover bias, fairness, or data privacy</li>
+                <li>Explain governance and responsible use</li>
+                <li>Give high-level regulation and oversight context</li>
+              </ul>
+            </div>
+            <div>
+              <p class="label">Avoid…</p>
+              <ul>
+                <li>Long, legal-only policy documents</li>
+                <li>Technical content meant for experts</li>
+              </ul>
+            </div>
+          </div>
+          <button class="secondary" type="button" data-section="Rules, Risks, and Ethics of AI">Submit link for this section</button>
+        </article>
+
+        <article class="section-card">
+          <header>
+            <h3>AI News That Matters</h3>
+            <p class="muted">Timely news with clear implications for students.</p>
+          </header>
+          <div class="card-body">
+            <div>
+              <p class="label">We want links that…</p>
+              <ul>
+                <li>Highlight major partnerships or initiatives</li>
+                <li>Cover policy or regulatory updates</li>
+                <li>Show business or career implications</li>
+              </ul>
+            </div>
+            <div>
+              <p class="label">Avoid…</p>
+              <ul>
+                <li>Sensational or speculative coverage</li>
+                <li>General tech news without relevance</li>
+              </ul>
+            </div>
+          </div>
+          <button class="secondary" type="button" data-section="AI News That Matters">Submit link for this section</button>
+        </article>
+
+        <article class="section-card">
+          <header>
+            <h3>AI by Smeal Major</h3>
+            <p class="muted">Major-specific connections that make AI relevant.</p>
+          </header>
+          <div class="card-body">
+            <div>
+              <p class="label">We want links that…</p>
+              <ul>
+                <li>Share use cases by discipline</li>
+                <li>Show common tools in the field</li>
+                <li>Highlight skills students should know</li>
+                <li>Include relevant news tied to the major</li>
+              </ul>
+            </div>
+            <div>
+              <p class="label">Avoid…</p>
+              <ul>
+                <li>Repeating general content</li>
+                <li>Overly technical explanations</li>
+              </ul>
+            </div>
+          </div>
+          <button class="secondary" type="button" data-section="AI by Smeal Major">Submit link for this section</button>
+        </article>
+      </div>
+    </section>
+
+    <aside class="workspace-panel workspace-panel--form" aria-label="Submission form">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Submit a link</p>
+          <h2>Submission Panel</h2>
+          <p class="muted">Select a section on the left to unlock the form.</p>
+        </div>
+      </div>
+
+      <div class="submission-panel" id="submissionPanel">
+        <div class="selected-section" id="selectedSectionContainer">
+          <div class="label">Selected section</div>
+          <div class="selected-section__value" id="selectedSection">None selected</div>
+          <button class="link-btn" type="button" id="changeSection" aria-label="Change section" hidden>Change</button>
+        </div>
+
+        <form id="submissionForm">
+          <fieldset id="submissionFields" disabled>
+            <div class="field-group">
+              <label for="title">Title</label>
+              <input id="title" name="title" type="text" placeholder="Human-friendly link title" required />
+            </div>
+            <div class="field-group">
+              <label for="url">URL</label>
+              <input id="url" name="url" type="url" inputmode="url" placeholder="https://example.com" required />
+            </div>
+            <div class="field-group">
+              <label for="sourceType">Source Type</label>
+              <select id="sourceType" name="sourceType" required>
+                <option value="">Select</option>
+                <option>University / Academic</option>
+                <option>Company / Official Docs</option>
+                <option>Educational Platform</option>
+                <option>Nonprofit / Policy Organization</option>
+                <option>Government</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="why">Why this belongs</label>
+              <textarea id="why" name="why" rows="4" placeholder="1–2 sentences on why this fits the section" required></textarea>
+            </div>
+          </fieldset>
+
+          <div class="field-group two-col">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="saved" id="savedIndicator" aria-live="polite">Not saved yet</div>
+          <p class="tiny">Saved locally and sent with every submission.</p>
+
+          <input id="website" name="website" class="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <label class="honeypot-label" for="website">Leave this field blank</label>
+
+          <button class="primary" type="submit" id="submitButton" disabled>Submit link</button>
+        </form>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

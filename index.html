@@ -3,415 +3,126 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Student AI Hub Skeleton</title>
+  <title>Help Build the AI Hub</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="app.js"></script>
 </head>
-<body>
+<body class="landing">
   <header class="hero">
     <div class="hero__inner">
       <div>
         <p class="eyebrow">AI Hub Linkfarm</p>
-        <h1>Student AI Hub Skeleton</h1>
-        <p class="lede">Recreated from the provided PDF so contributors can explore, add links, and submit them to the review sheet.</p>
+        <h1>Help Build the AI Hub</h1>
+        <p class="lede">Students are curating a trusted library of AI resources. Share high-quality links that fit a Hub section and explain why they belong.</p>
       </div>
       <div class="submit-actions">
-        <button class="primary" id="submitTop">Submit All Rows</button>
-        <p class="small muted">All sections submit together. Required: Name, Email, and Title/URL/Description per link.</p>
+        <a class="primary" href="contribute.html">Enter the Curation Workspace</a>
+        <p class="small muted">Choose a Hub section, find a credible link, and submit it with a short justification.</p>
       </div>
     </div>
   </header>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="sticky">
-        <h2 class="sidebar__title">Sections</h2>
-        <nav aria-label="Section navigation">
-          <ul class="nav-list">
-            <li><a href="#ai-basics">AI Basics</a></li>
-            <li><a href="#using-ai">Using AI for School and Work</a></li>
-            <li><a href="#business-ai">How Businesses Are Using AI</a></li>
-            <li><a href="#ai-tools">AI Tools You Might Use</a></li>
-            <li><a href="#rules-risks">Rules, Risks, and Ethics of AI</a></li>
-            <li><a href="#ai-news">AI News That Matters</a></li>
-            <li><a href="#ai-major">AI by Smeal Major</a></li>
-          </ul>
-        </nav>
+  <main class="page">
+    <section class="section-block">
+      <h2>What counts as a good link</h2>
+      <ul class="bullet-list">
+        <li>Credible source (universities, official docs, reputable organizations or platforms)</li>
+        <li>Clear and student-friendly</li>
+        <li>Stable and dependable (avoid personal blogs or social threads)</li>
+        <li>Fits a specific Hub section</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>Links to avoid</h2>
+      <ul class="bullet-list avoid">
+        <li>Personal blogs or Medium posts</li>
+        <li>Hype or shortcut content</li>
+        <li>Anything that replaces student thinking</li>
+        <li>Unstable or spammy sources</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li>Browse the Hub sections to understand what each needs.</li>
+        <li>Pick a section.</li>
+        <li>Find a link that fits the guidance.</li>
+        <li>Submit it with a short explanation in the workspace.</li>
+      </ol>
+    </section>
+
+    <section class="section-block">
+      <h2>Examples of strong submissions</h2>
+      <p class="muted">Use these to calibrate quality. They show how to choose a section, label the source type, and write a concise justification.</p>
+      <div class="card-grid examples">
+        <article class="example-card">
+          <h3>Boosting Your Time Management with AI Tools</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.linkedin.com/learning/boosting-your-time-management-with-ai-tools/get-more-productive-with-ai?u=76811570" target="_blank" rel="noopener">LinkedIn Learning course</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> Using AI for School and Work</p>
+          <p class="small"><strong>Source type:</strong> Educational Platform</p>
+          <p class="muted">Why this belongs: Shows practical, low-hype ways to use AI to organize time and tasks—exactly the kind of applied productivity guidance students need.</p>
+        </article>
+        <article class="example-card">
+          <h3>Automate Your Workflows with Generative AI</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.linkedin.com/learning/automate-your-workflows-with-generative-ai/transform-your-workflows-with-generative-ai?u=76811570" target="_blank" rel="noopener">LinkedIn Learning course</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> Using AI for School and Work</p>
+          <p class="small"><strong>Source type:</strong> Educational Platform</p>
+          <p class="muted">Why this belongs: Demonstrates responsible workflow automation with tangible examples, aligning with the section’s focus on everyday academic and professional tasks.</p>
+        </article>
+        <article class="example-card">
+          <h3>Generative AI Productivity Hacks with Miss Excel</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.linkedin.com/learning/generative-ai-productivity-hacks-with-miss-excel/how-to-use-this-course-29607122?u=76811570" target="_blank" rel="noopener">LinkedIn Learning course</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> Using AI for School and Work</p>
+          <p class="small"><strong>Source type:</strong> Educational Platform</p>
+          <p class="muted">Why this belongs: Gives clear, student-friendly demonstrations of AI-supported productivity without hype, helping learners see concrete use cases.</p>
+        </article>
+        <article class="example-card">
+          <h3>Introduction to Artificial Intelligence</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.linkedin.com/learning/introduction-to-artificial-intelligence-24947908/why-you-need-to-know-about-artificial-intelligence?u=76811570" target="_blank" rel="noopener">LinkedIn Learning course</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> AI Basics</p>
+          <p class="small"><strong>Source type:</strong> Educational Platform</p>
+          <p class="muted">Why this belongs: Offers plain-language framing on what AI is and why it matters, setting expectations for students new to the topic.</p>
+        </article>
+        <article class="example-card">
+          <h3>What Is Generative AI?</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.linkedin.com/learning/what-is-generative-ai/generative-ai-is-a-tool-in-service-of-humanity?u=76811570" target="_blank" rel="noopener">LinkedIn Learning course</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> AI Basics</p>
+          <p class="small"><strong>Source type:</strong> Educational Platform</p>
+          <p class="muted">Why this belongs: Provides a grounded overview of generative AI’s role and limits, which fits the section’s emphasis on clear, hype-free context.</p>
+        </article>
+        <article class="example-card">
+          <h3>What Is FOBO? Stay Relevant at Work</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.forbes.com/sites/dianehamilton/2025/03/03/what-is-fobo-how-to-stay-relevant-and-not-become-obsolete-at-work/" target="_blank" rel="noopener">Forbes article</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> AI News That Matters</p>
+          <p class="small"><strong>Source type:</strong> Other</p>
+          <p class="muted">Why this belongs: Connects emerging AI workplace trends to career relevance, making it a timely news piece with clear student implications.</p>
+        </article>
+        <article class="example-card">
+          <h3>What Nature Wants from AI Governance</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.nature.com/articles/d41586-025-02005-y" target="_blank" rel="noopener">Nature article</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> Rules, Risks, and Ethics of AI</p>
+          <p class="small"><strong>Source type:</strong> University / Academic</p>
+          <p class="muted">Why this belongs: Gives research-grounded perspective on governance and risk, matching the section’s focus on responsible use.</p>
+        </article>
+        <article class="example-card">
+          <h3>How to Choose an AI Governance Model</h3>
+          <p class="small"><strong>URL:</strong> <a href="https://www.kungfu.ai/blog-post/part-3-how-to-choose-an-ai-governance-model-that-works-for-your-organization" target="_blank" rel="noopener">Kungfu.AI post</a></p>
+          <p class="small"><strong>Suggested Hub section:</strong> Rules, Risks, and Ethics of AI</p>
+          <p class="small"><strong>Source type:</strong> Company / Official Docs</p>
+          <p class="muted">Why this belongs: Breaks down governance choices and tradeoffs in accessible language, helping students see how organizations design responsible AI practices.</p>
+        </article>
       </div>
-    </aside>
+    </section>
 
-    <main>
-      <div class="top-status">
-        <div id="submissionStatus" class="status-pill" aria-live="polite">Ready to collect links</div>
+    <section class="section-block cta">
+      <div>
+        <h2>Ready to contribute?</h2>
+        <p class="lede">Head to the workspace, pick a section, and share your best AI resource with a short explanation.</p>
       </div>
-
-      <section class="section-block" id="ai-basics" data-section-name="AI Basics">
-        <div class="section-header">
-          <h2>AI Basics</h2>
-        </div>
-        <div class="guidance">
-          <div>
-            <h3>Purpose</h3>
-            <p>Give students a clear, non-technical understanding of what AI is, why it matters, and how to think about it responsibly.</p>
-          </div>
-          <div>
-            <h3>Link direction</h3>
-            <ul>
-              <li>Plain-language explanations of AI and generative AI</li>
-              <li>High-level context on why AI is relevant now</li>
-              <li>Framing that sets expectations and avoids hype</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avoid</h3>
-            <ul>
-              <li>Technical deep dives</li>
-              <li>Tool guides or productivity tips</li>
-            </ul>
-          </div>
-        </div>
-        <div class="worksheet" data-section="AI Basics">
-          <div class="worksheet__header">
-            <h3>Worksheet</h3>
-            <button class="ghost add-row" type="button">+ Add row</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title*</th>
-                  <th>URL*</th>
-                  <th>Description*</th>
-                  <th>Type</th>
-                  <th>Source</th>
-                  <th>Tags</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="using-ai" data-section-name="Using AI for School and Work">
-        <div class="section-header">
-          <h2>Using AI for School and Work</h2>
-        </div>
-        <div class="guidance">
-          <div>
-            <h3>Purpose</h3>
-            <p>Show how AI can practically support everyday academic and professional tasks.</p>
-          </div>
-          <div>
-            <h3>Link direction</h3>
-            <ul>
-              <li>Productivity and workflow examples</li>
-              <li>Research, writing, and organization use cases</li>
-              <li>Content that shows AI as a work assistant</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avoid</h3>
-            <ul>
-              <li>Pure theory</li>
-              <li>Major-specific or industry-specific examples</li>
-            </ul>
-          </div>
-        </div>
-        <div class="worksheet" data-section="Using AI for School and Work">
-          <div class="worksheet__header">
-            <h3>Worksheet</h3>
-            <button class="ghost add-row" type="button">+ Add row</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title*</th>
-                  <th>URL*</th>
-                  <th>Description*</th>
-                  <th>Type</th>
-                  <th>Source</th>
-                  <th>Tags</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="business-ai" data-section-name="How Businesses Are Using AI">
-        <div class="section-header">
-          <h2>How Businesses Are Using AI</h2>
-        </div>
-        <div class="guidance">
-          <div>
-            <h3>Purpose</h3>
-            <p>Help students understand how AI is actually being adopted in real organizations.</p>
-          </div>
-          <div>
-            <h3>Link direction</h3>
-            <ul>
-              <li>Real business and government use cases</li>
-              <li>Organizational impact and decision-making</li>
-              <li>Career relevance and workplace implications</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avoid</h3>
-            <ul>
-              <li>Student-focused productivity content</li>
-              <li>Tool tutorials</li>
-            </ul>
-          </div>
-        </div>
-        <div class="worksheet" data-section="How Businesses Are Using AI">
-          <div class="worksheet__header">
-            <h3>Worksheet</h3>
-            <button class="ghost add-row" type="button">+ Add row</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title*</th>
-                  <th>URL*</th>
-                  <th>Description*</th>
-                  <th>Type</th>
-                  <th>Source</th>
-                  <th>Tags</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="ai-tools" data-section-name="AI Tools You Might Use">
-        <div class="section-header">
-          <h2>AI Tools You Might Use</h2>
-        </div>
-        <div class="guidance">
-          <div>
-            <h3>Purpose</h3>
-            <p>Introduce students to commonly used AI tools and help them understand when each is appropriate.</p>
-          </div>
-          <div>
-            <h3>Link direction</h3>
-            <ul>
-              <li>Tool roundups and comparisons</li>
-              <li>"Which tool for which task" framing</li>
-              <li>Clear explanations without hype</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avoid</h3>
-            <ul>
-              <li>Exhaustive lists</li>
-              <li>Highly technical setup guides</li>
-            </ul>
-          </div>
-        </div>
-        <div class="worksheet" data-section="AI Tools You Might Use">
-          <div class="worksheet__header">
-            <h3>Worksheet</h3>
-            <button class="ghost add-row" type="button">+ Add row</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title*</th>
-                  <th>URL*</th>
-                  <th>Description*</th>
-                  <th>Type</th>
-                  <th>Source</th>
-                  <th>Tags</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="rules-risks" data-section-name="Rules, Risks, and Ethics of AI">
-        <div class="section-header">
-          <h2>Rules, Risks, and Ethics of AI</h2>
-        </div>
-        <div class="guidance">
-          <div>
-            <h3>Purpose</h3>
-            <p>Build awareness of responsibility, risk, and expectations around AI use.</p>
-          </div>
-          <div>
-            <h3>Link direction</h3>
-            <ul>
-              <li>Bias, fairness, and data privacy</li>
-              <li>Governance and responsible use</li>
-              <li>High-level regulation and oversight</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avoid</h3>
-            <ul>
-              <li>Long policy documents</li>
-              <li>Content meant only for legal or technical audiences</li>
-            </ul>
-          </div>
-        </div>
-        <div class="worksheet" data-section="Rules, Risks, and Ethics of AI">
-          <div class="worksheet__header">
-            <h3>Worksheet</h3>
-            <button class="ghost add-row" type="button">+ Add row</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title*</th>
-                  <th>URL*</th>
-                  <th>Description*</th>
-                  <th>Type</th>
-                  <th>Source</th>
-                  <th>Tags</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="ai-news" data-section-name="AI News That Matters">
-        <div class="section-header">
-          <h2>AI News That Matters</h2>
-        </div>
-        <div class="guidance">
-          <div>
-            <h3>Purpose</h3>
-            <p>Keep students informed without overwhelming them.</p>
-          </div>
-          <div>
-            <h3>Link direction</h3>
-            <ul>
-              <li>Major partnerships and initiatives</li>
-              <li>Policy or regulatory developments</li>
-              <li>News with clear business or career implications</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avoid</h3>
-            <ul>
-              <li>Sensational or speculative coverage</li>
-              <li>General tech news without relevance</li>
-            </ul>
-          </div>
-        </div>
-        <div class="worksheet" data-section="AI News That Matters">
-          <div class="worksheet__header">
-            <h3>Worksheet</h3>
-            <button class="ghost add-row" type="button">+ Add row</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title*</th>
-                  <th>URL*</th>
-                  <th>Description*</th>
-                  <th>Type</th>
-                  <th>Source</th>
-                  <th>Tags</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="ai-major" data-section-name="AI by Smeal Major">
-        <div class="section-header">
-          <h2>AI by Smeal Major</h2>
-        </div>
-        <div class="guidance">
-          <div>
-            <h3>Purpose</h3>
-            <p>Translate everything above into major-specific relevance.</p>
-          </div>
-          <div>
-            <h3>Link direction</h3>
-            <ul>
-              <li>Use cases by discipline</li>
-              <li>Common tools in that field</li>
-              <li>Skills students should be aware of</li>
-              <li>Relevant news tied to the major</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avoid</h3>
-            <ul>
-              <li>Repeating general content</li>
-              <li>Overly technical explanations</li>
-            </ul>
-          </div>
-        </div>
-        <div class="worksheet" data-section="AI by Smeal Major">
-          <div class="worksheet__header">
-            <h3>Worksheet</h3>
-            <button class="ghost add-row" type="button">+ Add row</button>
-          </div>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title*</th>
-                  <th>URL*</th>
-                  <th>Description*</th>
-                  <th>Type</th>
-                  <th>Source</th>
-                  <th>Tags</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <div class="submit-actions bottom">
-        <button class="primary" id="submitBottom">Submit All Rows</button>
-        <p class="small muted">Submits each filled row individually to the configured Google Apps Script.</p>
-      </div>
-    </main>
-
-    <aside class="identity">
-      <div class="sticky">
-        <h2>Your info</h2>
-        <p class="muted">Required for every submission. Saved locally for reuse.</p>
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required />
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required />
-
-        <div class="saved" id="savedIndicator" aria-live="polite">Not saved yet</div>
-        <p class="tiny">Data stays in your browser. It is sent with every row you submit.</p>
-
-        <input id="website" name="website" class="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <label class="honeypot-label" for="website">Leave this field blank</label>
-      </div>
-    </aside>
-  </div>
+      <a class="primary" href="contribute.html">Enter the Curation Workspace</a>
+    </section>
+  </main>
 </body>
 </html>
